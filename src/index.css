@@ -1,13 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Ownglyph_jooreeletter-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_jooreeletter-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Ownglyph_jooreeletter-Rg";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 237, 0.6) 100%
+  );
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.moveLeft {
+  animation-name: move-left;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.moveRight {
+  animation-name: move-right;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.moveSticker {
+  animation-name: move-sticker;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.moveTextSticker {
+  animation-name: move-text-sticker;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move-left {
+  from {
+    top: 50%;
+    left: 0;
+    translate: transform(0, -50%);
+    rotate: 23deg;
+  }
+  to {
+    top: 52%;
+    left: 53%;
+    translate: transform(-50%, -50%);
+    rotate: -8deg;
+  }
+}
+
+@keyframes move-right {
+  from {
+    top: 50%;
+    left: 100%;
+    rotate: -8deg;
+  }
+  to {
+    top: 52%;
+    right: 53%;
+    translate: transform(-50%, -50%);
+    rotate: 3deg;
+  }
+}
+
+@keyframes move-sticker {
+  from {
+    top: 20%;
+    right: -40%;
+    translate: transform(0, -50%);
+    rotate: -8deg;
+  }
+  to {
+    top: 20%;
+    right: 12%;
+    rotate: 3deg;
+  }
+}
+
+@keyframes move-text-sticker {
+  from {
+    top: 20%;
+    left: 0%;
+    translate: transform(0, -50%);
+    rotate: 3deg;
+  }
+  to {
+    top: 20%;
+    left: 12%;
+    rotate: -10deg;
+  }
 }
